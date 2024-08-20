@@ -1,0 +1,295 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <!-- Meta Tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="keywords" content="Site keywords here">
+		<meta name="description" content="">
+		<meta name='copyright' content=''>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Title -->
+        <title>Welcome | Register</title>
+		
+		<!-- Favicon -->
+        <link rel="icon" href="img/logo.png">
+		
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- Nice Select CSS -->
+		<link rel="stylesheet" href="css/nice-select.css">
+		<!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+		<!-- icofont CSS -->
+        <link rel="stylesheet" href="css/icofont.css">
+		<!-- Slicknav -->
+		<link rel="stylesheet" href="css/slicknav.min.css">
+		<!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="css/owl-carousel.css">
+		<!-- Datepicker CSS -->
+		<link rel="stylesheet" href="css/datepicker.css">
+		<!-- Animate CSS -->
+        <link rel="stylesheet" href="css/animate.min.css">
+		<!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="css/magnific-popup.css">
+		
+		<!-- Medipro CSS -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+		
+    </head>
+    <body>
+	
+		<!-- Breadcrumbs -->
+		<div class="breadcrumbs overlay">
+			<div class="container">
+				<div class="bread-inner">
+					<div class="row">
+						<div class="col-12">
+							<h2>Welcome To</h2>
+							<h2>Admin Register</h2>
+							<ul class="bread-list">
+								<li><a href="index.html">Home</a></li>
+								<li><i class="icofont-simple-right"></i></li>
+								<li class="active">Admin</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Breadcrumbs -->
+        <section class="appointment">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="section-title">
+							<h2>Admin can Register Here. Please Fill the Form.</h2>
+							<img src="img/section-img.png" alt="#">
+							<p>The Admin registration form should include sections for personal details </p>
+						</div>
+						<h3>Admin Registration Form</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-md-12 col-12">
+						<form id="Registration" action="register" method="post">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<label class="font-italic font-weight-bold" for="name">Name:</label>
+                <input type="text" id="name" name="name" pattern="[A-Za-z]+" required>
+                <span class="error" id="nameError"></span>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<label class="font-italic font-weight-bold" for="mobile">Mobile:</label>
+                <input type="number" id="mobile" name="mob" required>
+                <span class="error" id="mobileError"></span>
+									</div>
+								</div>
+								
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<div >
+											<label class="font-italic font-weight-bold" for="email">Email:</label>
+											<input type="email" id="email" name="mail" required>
+											<span class="error" id="emailError" ></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<label class="font-italic font-weight-bold" for="password">Password:</label>
+										<input type="password" id="password" name="pwd" required>
+										<span class="error" id="passwordError"></span>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<label class="font-italic font-weight-bold" for="confirmPassword">Confirm Password:</label>
+                						<input type="password" id="confirmPassword" name="cfm" required>
+                						<span class="error" id="confirmPasswordError"></span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-5 col-md-4 col-12">
+									<div class="form-group">
+										<div class="button">
+										
+											<button type="register" class="btn">Register</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">
+									<button type="reset" class="btn">Reset</button>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-5 col-md-4 col-12">
+									<div class="form-group">
+										<div class="button">
+											
+											<a href="Login.html" class="btn">Already Register Back to Login.</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script>
+
+		document.getElementById('Registration').addEventListener('submit', function(event) {
+    if (!validateForm()) {
+        event.preventDefault();
+    }
+});
+
+function validateForm() {
+    let isValid = true;
+
+    // Clear previous errors
+    document.querySelectorAll('error').forEach(error => error.textContent = '');
+
+    // Name validation
+    const name = document.getElementById('name');
+    if (name.value.trim().length < 3 || name.value.trim().length > 20) {
+        document.getElementById('nameError').textContent = 'Name must be between 3 and 20 characters long.';
+        isValid = false;
+    }
+
+    // Mobile validation
+    const mobile = document.getElementById('mobile');
+    const mobilePattern = /^[6-9][0-9]{9}$/;
+    if (!mobilePattern.test(mobile.value.trim())) {
+        document.getElementById('mobileError').textContent = 'Enter a valid 10-digit mobile number starting with 6-9.';
+        isValid = false;
+    }
+
+    // Email validation
+    const email = document.getElementById('email');
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(email.value.trim())) {
+        document.getElementById('emailError').textContent = 'Please enter a valid email address.';
+        isValid = false;
+    }
+
+    // Password validation
+    const password = document.getElementById('password');
+    if (password.value.trim().length < 8) {
+        document.getElementById('passwordError').textContent = 'Password must be at least 8 characters long.';
+        isValid = false;
+    }
+
+    // Confirm Password validation
+    const confirmPassword = document.getElementById('cfm');
+    if (confirmPassword.value.trim() !== password.value.trim()) {
+        document.getElementById('confirmPasswordError').textContent = 'Passwords do not match.';
+        isValid = false;
+    }
+
+    return isValid;	
+    }
+    
+		</script>
+		
+				<!-- Footer Area -->
+                <footer id="footer" class="footer ">
+                    <!-- Footer Top -->
+                    <div class="footer-top">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-6 col-12">
+                                    <div class="single-footer">
+                                        <h2>About Us</h2>
+                                        <p style="width: 800px;">Welcome to BloodKart, your comprehensive solution for life-saving healthcare services including blood emergencies, hospital bed availability (BedKart), and oxygen gas supplies. We are dedicated to taking the guesswork out of critical healthcare decisions, ensuring you and your family receive timely, high-quality care. Our mission is to empower you to make informed healthcare decisions based on reliable information. We strive to make healthcare simpler and more transparent, ensuring you have access to the resources you need during critical times.</p>
+                                        <!-- Social -->
+                                        <ul class="social">
+                                            <li><a href="https://www.facebook.com/"><img src="img/facebook.png" alt=""></a></li>
+                                            <li><a href="https://www.instagram.com/"><img src="img/instagram.png" alt=""></a></li>
+                                            <li><a href="https://wa.me/qr/BOWL6K6Q7JT6G1"><img src="img/whatsapp.png" alt=""></a></li>
+                                            <li><a href="https://www.linkedin.com/"><img src="img/linkedin.png" alt=""></a></li>
+                                            <li><a href="https://www.youtube.com/"><img src="img/youtube.png" alt=""></a></li>
+                                        </ul>
+                                        <!-- End Social -->
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ End Footer Top -->
+                    <!-- Copyright -->
+                    <div class="copyright">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <div class="copyright-content">
+                                        <p>© Copyright 2018  |  All Rights Reserved by <a href="https://www.wpthemesgrid.com" target="_blank">bloodkart.com</a> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ End Copyright -->
+                </footer>
+		
+		<!-- jquery Min JS -->
+        <script src="js/jquery.min.js"></script>
+		<!-- jquery Migrate JS -->
+		<script src="js/jquery-migrate-3.0.0.js"></script>
+		<!-- jquery Ui JS -->
+		<script src="js/jquery-ui.min.js"></script>
+		<!-- Easing JS -->
+        <script src="js/easing.js"></script>
+		<!-- Color JS -->
+		<script src="js/colors.js"></script>
+		<!-- Popper JS -->
+		<script src="js/popper.min.js"></script>
+		<!-- Bootstrap Datepicker JS -->
+		<script src="js/bootstrap-datepicker.js"></script>
+		<!-- Jquery Nav JS -->
+        <script src="js/jquery.nav.js"></script>
+		<!-- Slicknav JS -->
+		<script src="js/slicknav.min.js"></script>
+		<!-- ScrollUp JS -->
+        <script src="js/jquery.scrollUp.min.js"></script>
+		<!-- Niceselect JS -->
+		<script src="js/niceselect.js"></script>
+		<!-- Tilt Jquery JS -->
+		<script src="js/tilt.jquery.min.js"></script>
+		<!-- Owl Carousel JS -->
+        <script src="js/owl-carousel.js"></script>
+		<!-- counterup JS -->
+		<script src="js/jquery.counterup.min.js"></script>
+		<!-- Steller JS -->
+		<script src="js/steller.js"></script>
+		<!-- Wow JS -->
+		<script src="js/wow.min.js"></script>
+		<!-- Magnific Popup JS -->
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<!-- Counter Up CDN JS -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+		<!-- Google Map API Key JS -->
+		<script src="https://maps.google.com/maps/api/js?key=AIzaSyDGqTyqoPIvYxhn_Sa7ZrK5bENUWhpCo0w"></script>
+		<!-- Gmaps JS -->
+		<script src="js/gmaps.min.js"></script>
+		<!-- Map Active JS -->
+		<script src="js/map-active.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- Main JS -->
+		<script src="js/main.js"></script>
+    </body>
+</html>
